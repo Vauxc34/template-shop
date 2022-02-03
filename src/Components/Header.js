@@ -1,36 +1,36 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 export default function Header() {
+
   return (
       <>
     
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <Link class="navbar-brand" to="/">
             <span>
-              Timups
+              Basic
             </span>
-          </a>
+          </Link>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""> </span>
           </button>
-
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <Link class="nav-link" to="/">Home<span class="sr-only">(current)</span></Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="watches.html"> Watches </a>
+                <Link class="nav-link" to="/watches"> Watches </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> About </a>
+                <Link class="nav-link" to="/about"> About </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+                <Link class="nav-link" to="/contact">Contact Us</Link>
               </li>
             </ul>
             <div class="user_option-box">

@@ -1,5 +1,11 @@
 import React from 'react';
 
+/* image's */
+
+import aboutimg from '../Components/images/about-img.png'
+
+/* image's */
+
 export default function AboutSection() {
   return (
     <section class="about_section layout_padding">
@@ -7,7 +13,7 @@ export default function AboutSection() {
       <div class="row">
         <div class="col-md-6 col-lg-5 ">
           <div class="img-box">
-            <img src="./images/about-img.png" alt="" />
+            <img src={aboutimg} alt="" />
           </div>
         </div>
         <div class="col-md-6 col-lg-7">

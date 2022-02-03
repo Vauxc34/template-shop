@@ -1,5 +1,16 @@
 import React from 'react';
 
+/* image's */
+
+import w1 from '../Components/images/w1.png'
+import w2 from '../Components/images/w2.png'
+import w3 from '../Components/images/w3.png'
+import w4 from '../Components/images/w4.png'
+import w5 from '../Components/images/w5.png'
+import w6 from '../Components/images/w6.png'
+
+/* image's */
+
 export default function ShopSection() {
   return (
       <>
@@ -16,7 +27,7 @@ export default function ShopSection() {
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/w1.png" alt="" />
+                <img src={w1} alt="" />
               </div>
               <div class="detail-box">
                 <h6>
@@ -41,7 +52,7 @@ export default function ShopSection() {
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/w2.png" alt="" />
+                <img src={w2} alt="" />
               </div>
               <div class="detail-box">
                 <h6>
@@ -66,7 +77,7 @@ export default function ShopSection() {
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/w3.png" alt="" />
+                <img src={w3} alt="" />
               </div>
               <div class="detail-box">
                 <h6>
@@ -91,7 +102,7 @@ export default function ShopSection() {
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/w4.png" alt="" />
+                <img src={w4} alt="" />
               </div>
               <div class="detail-box">
                 <h6>
@@ -116,7 +127,7 @@ export default function ShopSection() {
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/w5.png" alt="" />
+                <img src={w5} alt="" />
               </div>
               <div class="detail-box">
                 <h6>
@@ -141,7 +152,7 @@ export default function ShopSection() {
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/w6.png" alt="" />
+                <img src={w6} alt="" />
               </div>
               <div class="detail-box">
                 <h6>
@@ -166,7 +177,7 @@ export default function ShopSection() {
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/w1.png" alt="" />
+                <img src={w1} alt="" />
               </div>
               <div class="detail-box">
                 <h6>

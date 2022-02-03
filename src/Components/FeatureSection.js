@@ -1,5 +1,14 @@
 import React from 'react';
 
+/* image's */
+
+import f1 from '../Components/images/f1.png'
+import f2 from '../Components/images/f2.png'
+import f3 from '../Components/images/f3.png'
+import f4 from '../Components/images/f4.png'
+
+/* image's */
+
 export default function FeatureSection() {
   return (
       <>
@@ -18,7 +27,7 @@ export default function FeatureSection() {
         <div class="col-sm-6 col-lg-3">
           <div class="box">
             <div class="img-box">
-              <img src="images/f1.png" alt="" />
+              <img src={f1} alt="" />
             </div>
             <div class="detail-box">
               <h5>
@@ -39,7 +48,7 @@ export default function FeatureSection() {
         <div class="col-sm-6 col-lg-3">
           <div class="box">
             <div class="img-box">
-              <img src="images/f2.png" alt="" />
+              <img src={f2} alt="" />
             </div>
             <div class="detail-box">
               <h5>
@@ -60,7 +69,7 @@ export default function FeatureSection() {
         <div class="col-sm-6 col-lg-3">
           <div class="box">
             <div class="img-box">
-              <img src="images/f3.png" alt="" />
+              <img src={f3} alt="" />
             </div>
             <div class="detail-box">
               <h5>
@@ -81,7 +90,7 @@ export default function FeatureSection() {
         <div class="col-sm-6 col-lg-3">
           <div class="box">
             <div class="img-box">
-              <img src="images/f4.png" alt="" />
+              <img src={f4} alt="" />
             </div>
             <div class="detail-box">
               <h5>

@@ -1,5 +1,11 @@
 import React from 'react';
 
+/* image's */
+
+import sliderimg from '../Components/images/slider-img.png'
+
+/* image's */
+
 export default function Slider() {
   return (
   <>
@@ -46,7 +52,7 @@ export default function Slider() {
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-img.png" alt=""/>
+                    <img src={sliderimg} alt=""/>
                   </div>
                 </div>
               </div>
@@ -72,7 +78,7 @@ export default function Slider() {
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-img.png" alt=""/>
+                    <img src={sliderimg} alt=""/>
                   </div>
                 </div>
               </div>
@@ -98,7 +104,7 @@ export default function Slider() {
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-img.png" alt=""/>
+                    <img src={sliderimg} alt=""/>
                   </div>
                 </div>
               </div>

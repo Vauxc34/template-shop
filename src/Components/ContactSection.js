@@ -1,5 +1,12 @@
 import React from 'react';
 
+/* image's */
+
+import contactimg from '../Components/images/contact-img.jpg'
+
+/* image's */
+
+
 export default function ContactSection() {
   return (
       <>
@@ -36,7 +43,7 @@ export default function ContactSection() {
         </div>
         <div class="col-md-6">
           <div class="img-box">
-            <img src="images/contact-img.jpg" alt="" />
+            <img src={contactimg} alt="" />
           </div>
         </div>
       </div>

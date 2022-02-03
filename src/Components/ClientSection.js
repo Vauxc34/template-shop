@@ -1,5 +1,12 @@
 import React from 'react';
 
+/* image's */
+
+import c1 from '../Components/images/c1.jpg'
+import c2 from '../Components/images/c2.jpg'
+
+/* image's */
+
 export default function ClientSection() {
   return (
       <>
@@ -16,7 +23,7 @@ export default function ClientSection() {
           <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/c1.jpg" alt="" />
+                <img src={c1} alt="" />
               </div>
               <div class="detail-box">
                 <div class="client_info">
@@ -45,7 +52,7 @@ export default function ClientSection() {
           <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/c2.jpg" alt="" />
+                <img src={c2} alt="" />
               </div>
               <div class="detail-box">
                 <div class="client_info">

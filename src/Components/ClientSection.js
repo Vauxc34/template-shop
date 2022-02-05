@@ -15,7 +15,7 @@ export default function ClientSection() {
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Testimonial
+          Opinie naszych klientów
         </h2>
       </div>
       <div class="carousel-wrap ">

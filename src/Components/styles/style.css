@@ -2039,3 +2039,25 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .pagination > li > a, .pagination > li > span {
   color: #5a88ca;
 }
+
+/* custom */
+
+.cart-quantity-icon {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  position: absolute;
+  right: 55px;
+  top: 30px;
+  background: var(--info);
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+}
+
+.quantity-item-itself {
+  font-size: 7.95px;
+  color: #fff;
+}
+
+/* custom */

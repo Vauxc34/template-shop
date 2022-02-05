@@ -1,7 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+/* icon's */
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faCircle } from '@fortawesome/free-regular-svg-icons';
+
+
+/* icon's */
 
 export default function Header() {
+
+  const quantity = useSelector(state => state.cart.quantity)
 
   return (
       <>
@@ -21,28 +35,36 @@ export default function Header() {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
               <li class="nav-item active">
-              <Link class="nav-link" to="/">Home<span class="sr-only">(current)</span></Link>
+              <Link class="nav-link" to="/">strona główna<span class="sr-only">(current)</span></Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" to="/watches"> Watches </Link>
+                <Link class="nav-link" to="/watches"> produkty </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" to="/about"> About </Link>
+                <Link class="nav-link" to="/about"> twój profil </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" to="/contact">Contact Us</Link>
+                <Link class="nav-link" to="/about"> o nas </Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/contact">skontaktuj się z nami</Link>
               </li>
             </ul>
             <div class="user_option-box">
-              <a href="">
-                <i class="fa fa-user" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </a>
+              <Link to="/">
+                <FontAwesomeIcon icon={faUser}/>
+              </Link>
+              <Link to="/cart">
+                <FontAwesomeIcon icon={faShoppingCart}/>
+                <div className='cart-quantity-icon'>
+                <p className='quantity-item-itself'>
+                {quantity}
+                </p>
+                </div>
+              </Link>
+              <Link to="/">
+                <FontAwesomeIcon icon={faSearch}/>
+              </Link>
             </div>
           </div>
         </nav>

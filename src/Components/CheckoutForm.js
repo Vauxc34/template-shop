@@ -1,6 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import StripeCheckout from 'react-stripe-checkout';
+import { userRequest } from '../RequestMethod'
+import { useNavigate } from 'react-router-dom';
 
 export default function CheckoutForm() {
+
+    const [stripeToken, setStripeToken] = useState(null)
+
+    const cart = useSelector((state) => state.cart)
+
+    const KEY = process.env.REACT_APP_STRIPE
+
+    const onToken = (token) => {
+        setStripeToken(token)
+    }
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+
+        const makeRequest = async() => {
+            try {
+                const res = await userRequest.post("/checkout/payment/", {
+                    tokenId: stripeToken.id,
+                    amount: cart.total * 100
+                    
+                })
+                navigate('/succes', {data:res.data})
+            } catch {
+
+            }
+        }
+          stripeToken && makeRequest()
+    }, [stripeToken])
+
   return (
     <>
 
@@ -430,12 +464,7 @@ export default function CheckoutForm() {
                                             </li>
                                         </ul>
 
-                                        <div class="form-row place-order">
-
-                                            <input type="submit" data-value="Place order" value="Place order" id="place_order" name="woocommerce_checkout_place_order" class="button alt"/>
-
-
-                                        </div>
+                                        
 
                                         <div class="clear"></div>
 
@@ -447,10 +476,15 @@ export default function CheckoutForm() {
     </div>
     </div>
     </form>
-    </div>
+
+    <div class="form-row place-order">
+
+        <StripeCheckout name="test" image="test"  billingAddress shippingAddress amount={cart.total * 100} stripeKey="pk_test_51Jwpd7C6QGpCgPGiGbRw9P2udhkT3NYlPMO4jS7PQzdkRW5pV120knLF2SS88JxYzpShVp7k4jg7MsiFHIPEsFTB00GQRlg8D7" token={onToken}/>
+
     </div>
 
-
+    </div>
+    </div>
     </>
   );
 }

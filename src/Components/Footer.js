@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+/* icon's */
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
@@ -6,7 +9,12 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
+/* icon's */
+
 export default function Footer() {
+
+
+
   return (
       <>
       
@@ -88,8 +96,9 @@ export default function Footer() {
       </div>
       <div class="footer-info">
         <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a>
+          &copy; <span id="displayYear"></span> 
+          All Rights Reserved By 
+          <Link to="/"> Wiktor Wyrostek</Link>
         </p>
       </div>
     </div>

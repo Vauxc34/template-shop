@@ -1,17 +1,40 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-/* image's */
+/* component's */
 
-import w1 from '../Components/images/w1.png'
-import w2 from '../Components/images/w2.png'
-import w3 from '../Components/images/w3.png'
-import w4 from '../Components/images/w4.png'
-import w5 from '../Components/images/w5.png'
-import w6 from '../Components/images/w6.png'
 
-/* image's */
+
+/* component's */
 
 export default function ShopSection() {
+
+  const [Products, setProducts] = useState([])
+  const [isProductFeature, setIsProductFeature] = useState('no')
+  const [loading, setLoading] = useState(false)
+
+  const location = useLocation()
+
+  const category = location.pathname.split('/')[2]
+
+  const GetProducts = async () => {
+    try {
+      const res = await axios.get('https://basic-shop-apii.herokuapp.com/api/products/')
+      console.log(res.data)
+      setProducts(res.data)
+      //setIsProductFeature(res.data)
+      setLoading(true)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  
+  useEffect(() => {
+    GetProducts()
+  }, [])
+
+
   return (
       <>
 
@@ -19,191 +42,81 @@ export default function ShopSection() {
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Latest Watches
+          Najnowsze przedmioty
         </h2>
       </div>
       <div class="row">
-        <div class="col-md-6 ">
+
+      {Products.slice(0, 1).map((product, pId) => (
+          <div 
+          category={category}
+          product={product} 
+          key={pId} 
+          class="col-md-6">
           <div class="box">
-            <a href="">
+            <Link to={`/product/${product._id}`}>
               <div class="img-box">
-                <img src={w1} alt="" />
+                <img src={product.img} alt="" />
               </div>
               <div class="detail-box">
                 <h6>
-                  Smartwatch
+                  {product.title}
                 </h6>
                 <h6>
                   Price:
                   <span>
-                    $300
+                    {product.price} zł
                   </span>
                 </h6>
               </div>
               <div class="new">
                 <span>
-                  Featured
+                {isProductFeature}
                 </span>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
+      ))}
+        
+      {Products.slice(1,2).map((product, pId) => (
+          <div 
+          product={product} 
+          key={pId} 
+          class="col-md-6 col-xl-3">
           <div class="box">
-            <a href="">
+            <Link to={`/product/${product._id}`}>
               <div class="img-box">
-                <img src={w2} alt="" />
+                <img src={product.img}/>
               </div>
               <div class="detail-box">
                 <h6>
-                  Smartwatch
+                  {product.title}
                 </h6>
                 <h6>
                   Price:
                   <span>
-                    $125
+                    {product.price} zł
                   </span>
                 </h6>
               </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
+              <div class="new"><span>{isProductFeature}</span>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src={w3} alt="" />
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $110
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src={w4} alt="" />
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $145
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src={w5} alt="" />
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $195
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6  col-xl-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src={w6} alt="" />
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $170
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src={w1} alt="" />
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $230
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
+      ))}
+
       </div>
-      <div class="btn-box">
-        <a href="">
-          View All
-        </a>
-      </div>
+     
+     <div className='col-12 d-flex justify-content-center'>
+        <Link className='d-inline-block position-relative m-4' to={`/products/:category`}>
+        <div class="btn btn-warning p-2 px-3 d-inline-block text-white">
+          Zobacz wszystkie produkty
+        </div>
+        </Link>
+     </div>
+
     </div>
   </section>
 

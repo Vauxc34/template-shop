@@ -120,7 +120,7 @@ export default function Product() {
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
-                                        <img src={product2} alt="" />
+                                        <img src={Product.img} alt="" />
                                     </div>
                                     
                                     <div class="product-gallery">
@@ -135,7 +135,8 @@ export default function Product() {
                                 <div class="product-inner">
                                     <h2 class="product-name">{Product.title}</h2>
                                     <div class="product-inner-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
+                                        <ins>{Product.price}</ins> 
+                                        <del>{Product.price}</del>
                                     </div>    
                                     
                                     <form action="" class="cart">
@@ -150,20 +151,20 @@ export default function Product() {
                                     </form>   
                                     
                                     <div class="product-inner-category">
-                                        <p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
+                                        <p>Kategorie: <a href="">Summer</a>. Tags: 
+                                            <a href="">awesome</a>, 
+                                            <a href="">best</a>, 
+                                            <a href="">sale</a>, 
+                                            <a href="">shoes</a>. </p>
                                     </div> 
                                     
                                     <div role="tabpanel">
                                         <ul class="product-tab" role="tablist">
-                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
-                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Reviews</a></li>
+                                            <button role="presentation" class="add_to_cart_button">szczegóły</button>
                                         </ul>
                                         <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                                <h2>Product Description</h2>  
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>
-
-                                                <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+                                            <div role="tabpanel" id="home">
+                                                <p>{Product.desc}</p>
                                             </div>
                                             <div role="tabpanel" class="tab-pane fade" id="profile">
                                                 <h2>Reviews</h2>

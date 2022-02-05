@@ -29,22 +29,16 @@ export default function ClientSection() {
                 <div class="client_info">
                   <div class="client_name">
                     <h5>
-                      Mark Thomas
+                      Andrzej Kolasa
                     </h5>
                     <h6>
-                      Customer
+                      Jeden z naszych oddanych klientów
                     </h6>
                   </div>
                   <i class="fa fa-quote-left" aria-hidden="true"></i>
                 </div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                  labore
-                  et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum
-                  dolore eu fugia
+                Dla ludzi ze średnim wykształceniem, niejednokrotnie bez matury to bardzo dobra praca. Po studiach z językami nikt nie będzie pracował za takie grosze. Pensje na tym samym poziomie co w Biedronce czy Lidlu. Brakuje tylko jeszcze Ukraińców w tej instytucji. Ogólnie na 4+
                 </p>
               </div>
             </div>
@@ -58,22 +52,16 @@ export default function ClientSection() {
                 <div class="client_info">
                   <div class="client_name">
                     <h5>
-                      Alina Hans
+                      Martyna Żółkiewicz
                     </h5>
                     <h6>
-                      Customer
+                      Klientka
                     </h6>
                   </div>
                   <i class="fa fa-quote-left" aria-hidden="true"></i>
                 </div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                  labore
-                  et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum
-                  dolore eu fugia
+                Obecnie jestem klientem Banku Millenium.Chcę powiedzieć że jestem bardzo zadowolony z jakości usług i udogodnień jakie bank oferuje i ciągle się rozwijając.Osobiście Polecam Bank Millenium.Wcześniej byłem do repolonizacji w pekao i to jak by być w latach 80tych i tak ten bank trzyma poziom.
                 </p>
               </div>
             </div>

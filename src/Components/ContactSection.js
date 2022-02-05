@@ -17,24 +17,27 @@ export default function ContactSection() {
           <div class="form_container">
             <div class="heading_container">
               <h2>
-                Contact Us
+                Skontaktuj się z nami
               </h2>
             </div>
-            <form action="">
+
+            <form action="https://formsubmit.co/your@email.com" method="POST">
               <div>
-                <input type="text" placeholder="Full Name " />
+                <input type="text" name="name" placeholder="Imię i nazwisko " required/>
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" name="email" placeholder="Adres Email" required/>
               </div>
               <div>
-                <input type="text" placeholder="Phone number" />
+                <input type="text" placeholder="Numer telefonu" />
               </div>
-              <div>
-                <input type="text" class="message-box" placeholder="Message" />
+              <div className='w-100'>
+                <textarea
+                style={{ width: '100%', height: '175px' }}
+                name="message" class="message-box" placeholder="Wiadomość" />
               </div>
               <div class="d-flex ">
-                <button>
+                <button type="submit">
                   SEND
                 </button>
               </div>

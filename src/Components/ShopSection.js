@@ -11,7 +11,7 @@ import { Link, useLocation } from 'react-router-dom';
 export default function ShopSection() {
 
   const [Products, setProducts] = useState([])
-  const [isProductFeature, setIsProductFeature] = useState('no')
+  const [isProductFeature, setIsProductFeature] = useState('dostępne')
   const [loading, setLoading] = useState(false)
 
   const location = useLocation()
@@ -23,7 +23,11 @@ export default function ShopSection() {
       const res = await axios.get('https://basic-shop-apii.herokuapp.com/api/products/')
       console.log(res.data)
       setProducts(res.data)
-      //setIsProductFeature(res.data)
+      
+      if(res.data.isFeatured === true) {
+        setIsProductFeature('wyróznione')
+      }
+
       setLoading(true)
     } catch (err) {
       console.log(err)
@@ -79,7 +83,7 @@ export default function ShopSection() {
         </div>
       ))}
         
-      {Products.slice(1,2).map((product, pId) => (
+      {Products.slice(1,999999).map((product, pId) => (
           <div 
           product={product} 
           key={pId} 
@@ -94,7 +98,7 @@ export default function ShopSection() {
                   {product.title}
                 </h6>
                 <h6>
-                  Price:
+                  Cena:
                   <span>
                     {product.price} zł
                   </span>

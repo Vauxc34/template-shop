@@ -16,17 +16,25 @@ export default function Login() {
 
   return (
       <>
-      
-      <input type='text' value={username} placeholder='username' onChange={(e) => setUserName(e.target.value)}/>
-      <input type='text' value={password} 
-      placeholder='password'
+      <div className='col-12 d-flex flex-column justify-content-center align-items-center my-2'>
+        <div className='row w-75 my-5 py-5 bg-success d-flex flex-column justify-content-center align-items-center my-12'>
+
+      <label className=' form-label text-center text-uppercase h2 my-5'>logowanie</label>
+
+      <input type='text' className='m-3 my-2 input-group-text w-50 text-uppercase' value={username} placeholder='nazwa użytkownika' onChange={(e) => setUserName(e.target.value)}/>
+      <input type='text' className='m-3 my-2 input-group-text w-50 text-uppercase' value={password} 
+      placeholder='hasło'
       type='password'
       onChange={(e) => setPassword(e.target.value)}/>
-      <input onClick={HandleLogin}
+      <input 
+      className="my-4 w-25 text-uppercase button-radius border-info"
+      onClick={HandleLogin}
       disabled={isFetching}
-      type='button' value='login'/>
-      {error && <span>coś się zjebało</span> }
+      type='button' value='zaloguj się'/>
+      {error && <span className='text-center my-2 text-uppercase'>coś się zjebało</span> }
 
+        </div>
+      </div>
       </>
   );
 }

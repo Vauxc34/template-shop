@@ -131,12 +131,12 @@ export default function EverythingItems() {
                 key={pId} class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-2.jpg" alt=""/>
+                            <img className=' img-thumbnail' style={{ width: '250px' }} src={product.img} alt=""/>
                         </div>
                         <h2>{product.title}</h2>
                         <div class="product-carousel-price">
-                            <ins>{product.price}</ins> 
-                            <del>{product.price}</del>
+                            <ins>{product.price} zł</ins> 
+                            <del>{product.price} zł</del>
                         </div>  
                         
                         <div class="product-option-shop">

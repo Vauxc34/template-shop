@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 /* icon's */
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage } from '@fortawesome/free-solid-svg-icons'
-import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faMinusSquare } from '@fortawesome/free-regular-svg-icons'
 
 /* icon's */
 
 export default function Cart() {
+
+    const [products, setProducts] = useState([])
 
     const cart = useSelector(state => state.cart)
 
@@ -24,6 +28,20 @@ export default function Cart() {
           setQuantity(quantity + 1);
         }
       };
+
+
+      useEffect(() => {
+
+        const FetchProducts = async () => {
+            try {
+                const res = await axios.get('https://basic-shop-apii.herokuapp.com/api/products/')
+                setProducts(res.data)
+            } catch(err) {
+                console.log(err)
+            }
+        }
+        FetchProducts()
+      }, [])
 
   return (
       <>
@@ -43,34 +61,24 @@ export default function Cart() {
                     
                     <div class="single-sidebar">
                         <h2 class="sidebar-title">produkty</h2>
-                        <div class="thubmnail-recent">
-                            <img src="" class="recent-thumb" alt="" />
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>                             
+
+                        {products.map((item, key) => (
+
+                        <div key={key} class="thubmnail-recent">
+                        <img src={item.img} class="recent-thumb"/>
+                        <h2>
+                            <Link to={`/product${item._id}`}>
+                            <h2>{item.title}</h2>
+                            </Link>
+                        </h2>
+<                       div class="product-sidebar-price">
+                         <ins>{item.price}</ins> 
+                         <del>{item.price}</del>
+                        </div>                             
                         </div>
-                        <div class="thubmnail-recent">
-                            <img src="" class="recent-thumb" alt="" />
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="" class="recent-thumb" alt="" />
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="" class="recent-thumb" alt="" />
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>                             
-                        </div>
+
+                        ))}
+                       
                     </div>
                     
             </div>
@@ -100,7 +108,7 @@ export default function Cart() {
 
                                              <tr class="cart_item">
                                             <td class="product-remove">
-                                                <a title="Remove this item" class="remove" href="#">×</a> 
+                                                <FontAwesomeIcon icon={faMinusSquare}/>
                                             </td>
 
                                             <td class="product-thumbnail">
@@ -135,7 +143,6 @@ export default function Cart() {
 
                                         <tr>
                                             <td class="actions" colspan="6">
-                                                <input type="submit" value="Aktualizuj koszyk" name="update_cart" className="button m-2"/>
                                                 <input type="submit" value="Finalizacja zamówienia" name="proceed" className="checkout-button button alt wc-forward m-2"/>
                                             </td>
                                         </tr>

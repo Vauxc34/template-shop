@@ -50,40 +50,8 @@ export default function Cart() {
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
-            <div class="col-md-4">
-                <div class="single-sidebar">
-                        <h2 class="sidebar-title">znajdź ciekawy produkt</h2>
-                        <form action="">
-                            <input type="text" />
-                            <input type="submit" value="szukaj" />
-                        </form>
-                    </div>
-                    
-                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">produkty</h2>
-
-                        {products.map((item, key) => (
-
-                        <div key={key} class="thubmnail-recent">
-                        <img src={item.img} class="recent-thumb"/>
-                        <h2>
-                            <Link to={`/product${item._id}`}>
-                            <h2>{item.title}</h2>
-                            </Link>
-                        </h2>
-<                       div class="product-sidebar-price">
-                         <ins>{item.price}</ins> 
-                         <del>{item.price}</del>
-                        </div>                             
-                        </div>
-
-                        ))}
-                       
-                    </div>
-                    
-            </div>
                 
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="product-content-right">
                         <div class="woocommerce">
                             <form method="post" action="#">

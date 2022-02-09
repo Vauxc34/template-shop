@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -13,9 +13,17 @@ import { faCircle } from '@fortawesome/free-regular-svg-icons';
 
 /* icon's */
 
-export default function Header() {
+export default function Header({ HandleSearchSomething }) {
 
   const quantity = useSelector(state => state.cart.quantity)
+
+  const HeaderOption = [
+    { name: "strona główna" ,url: "/" },
+    { name: "produkty" ,url: "/watches" },
+    { name: "twój profil" ,url: "/twoj-profil/:id" },
+    { name: "o nas" ,url: "/about" },
+    { name: "skontaktuj się z nami" ,url: "/contact" },
+  ]
 
   return (
       <>
@@ -34,24 +42,17 @@ export default function Header() {
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-              <li class="nav-item active">
-              <Link class="nav-link" to="/">strona główna<span class="sr-only">(current)</span></Link>
-              </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/watches"> produkty </Link>
-              </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/about"> twój profil </Link>
-              </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/about"> o nas </Link>
-              </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/contact">skontaktuj się z nami</Link>
-              </li>
+
+              {HeaderOption.map(((option) => (
+                <li class="nav-item active">
+                <Link class="nav-link" to={`${option.url}`}>{option.name}<span class="sr-only">(current)</span></Link>
+                </li>
+              )))}
+  
+
             </ul>
             <div class="user_option-box">
-              <Link to="/">
+              <Link to="/twoj-profil/:id">
                 <FontAwesomeIcon icon={faUser}/>
               </Link>
               <Link to="/cart">
@@ -62,15 +63,14 @@ export default function Header() {
                 </p>
                 </div>
               </Link>
-              <Link to="/">
+              <a onClick={HandleSearchSomething}>
                 <FontAwesomeIcon icon={faSearch}/>
-              </Link>
+              </a>
             </div>
           </div>
         </nav>
       </div>
     </header>
-
       </>
   );
 }

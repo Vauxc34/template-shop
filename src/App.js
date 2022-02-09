@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -22,6 +23,7 @@ import Login from './Components/Login';
 
 import ShopSection from './Components/ShopSection';
 import AboutSection from './Components/AboutSection';
+import OurProfile from './Components/OurProfile';
 import ContactSection from './Components/ContactSection';
 import Product from './Components/Product';
 import EverythingItems from './Components/EverythingItems';
@@ -35,18 +37,44 @@ import Succes from './Components/Succes';
 
 function App() {
 
+  const [search, setSearch] = useState(null)
+  const [isSearch, setIsSearch] = useState(false)
+
+  const SearchComponent = () => {
+    return (
+      <>
+      <div className='search-component'>
+      <div className='card'>
+      <input type="search" placeholder="A ty czego szukasz?" className='' />
+      </div>
+      </div>
+      </>
+    )
+  }
+
+  const HandleSearchSomething = () => {
+    setIsSearch(true)
+    if(isSearch == true) {
+      setIsSearch(false)
+      setSearch(SearchComponent)
+    } else if (isSearch == false) {
+      setSearch(null)
+    }
+    }
+
   const user = useSelector(state => state.user.currentUser)
 
   return (
    <>
 
-    <Header/>
-    
+    <Header HandleSearchSomething={HandleSearchSomething} />
+      {search}
       <Routes>
         <Route path='/' element={<Main/>}/>
         <Route path='/login' element={user ? <Navigate to='/'/> : <Login/>}/>
         <Route path='/register' element={user ? <Navigate to='/'/> : <Register/>}/>
         <Route path='/watches' element={<ShopSection/>}/>
+        <Route path='/twoj-profil/:id' element={<OurProfile/>}/>
         <Route path='/about' element={<AboutSection/>}/>
         <Route path='/contact' element={<ContactSection/>}/>
         <Route path='/product/:id' element={<Product/>}/>

@@ -2061,3 +2061,14 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 }
 
 /* custom */
+
+.search-component {
+  position: fixed;
+  top: 75px;
+  right: 20px;
+  z-index: 999;
+}
+
+a:hover {
+  cursor: pointer;
+}

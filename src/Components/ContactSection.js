@@ -38,7 +38,7 @@ export default function ContactSection() {
               </div>
               <div class="d-flex ">
                 <button type="submit">
-                  SEND
+                  wyślij wiadomość
                 </button>
               </div>
             </form>

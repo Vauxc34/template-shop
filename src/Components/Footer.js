@@ -24,10 +24,11 @@ export default function Footer() {
         <div class="col-md-6 col-lg-3 footer-col">
           <div class="footer_detail">
             <h4>
-              About
+              O nas 🏬
             </h4>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+            Jesteśmy firmą z długoletnim stażem, posiadamy doświadczenie zarówno w branży odzieżowej jak i obuwniczej. 
+            Dokładamy wszelkich starań, aby dostarczyć nasze produkty na czas oferując rzetelną obsługę.
             </p>
             <div class="footer_social">
               <a href="">
@@ -49,25 +50,25 @@ export default function Footer() {
         <div class="col-md-6 col-lg-3 footer-col">
           <div class="footer_contact">
             <h4>
-              Reach at..
+              Znajdź nas na 🙄
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a className=' text-decoration-none' href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  Warszawa
                 </span>
               </a>
-              <a href="">
+              <a className=' text-decoration-none' href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Zadzwoń 632 443 222
                 </span>
               </a>
-              <a href="">
+              <a className=' text-decoration-none' href="sklep-basic@gmail.com">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  sklep-basic@gmail.com
                 </span>
               </a>
             </div>
@@ -76,12 +77,12 @@ export default function Footer() {
         <div class="col-md-6 col-lg-3 footer-col">
           <div class="footer_contact">
             <h4>
-              Subscribe
+              Zasubsykruj 📧
             </h4>
             <form action="#">
-              <input type="text" placeholder="Enter email" />
+              <input type="text" placeholder="Twój adres e-mail" />
               <button type="submit">
-                Subscribe
+              Zasubsykruj
               </button>
             </form>
           </div>
@@ -95,11 +96,7 @@ export default function Footer() {
         </div>
       </div>
       <div class="footer-info">
-        <p>
-          &copy; <span id="displayYear"></span> 
-          All Rights Reserved By 
-          <Link to="/"> Wiktor Wyrostek</Link>
-        </p>
+        
       </div>
     </div>
   </footer>

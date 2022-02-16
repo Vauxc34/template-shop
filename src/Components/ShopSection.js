@@ -11,7 +11,7 @@ import { Link, useLocation } from 'react-router-dom';
 export default function ShopSection() {
 
   const [Products, setProducts] = useState([])
-  const [isProductFeature, setIsProductFeature] = useState('dostępne')
+  const [isProductFeature, setIsProductFeature] = useState('Dostępne')
   const [loading, setLoading] = useState(false)
 
   const location = useLocation()
@@ -46,7 +46,7 @@ export default function ShopSection() {
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Najnowsze przedmioty
+          Najnowszy asortyment
         </h2>
       </div>
       <div class="row">
@@ -67,8 +67,7 @@ export default function ShopSection() {
                   {product.title}
                 </h6>
                 <h6>
-                  Price:
-                  <span>
+                  Cena: <span>
                     {product.price} zł
                   </span>
                 </h6>
@@ -98,8 +97,7 @@ export default function ShopSection() {
                   {product.title}
                 </h6>
                 <h6>
-                  Cena:
-                  <span>
+                  Cena: <span>
                     {product.price} zł
                   </span>
                 </h6>

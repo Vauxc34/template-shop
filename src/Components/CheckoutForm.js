@@ -452,21 +452,11 @@ export default function CheckoutForm() {
                                     </table>
 
                                     <div id="payment">
-                                        <ul class="payment_methods methods">
-                                            <li class="payment_method_bacs">
-                                                <div className='d-flex'>
-                                                <input type="radio" data-order_button_text="" checked="checked" value="bacs" name="payment_method" class="input-radio m-1" id="payment_method_bacs"/>
-                                                <label className='m-1' for="payment_method_bacs">Stripe</label>
-                                                </div>
-                                                <div class="payment_box payment_method_bacs">
-                                                    <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                        
 
                                         
 
-                                        <div class="clear"></div>
+                                        
 
                                     </div>
 
@@ -479,7 +469,6 @@ export default function CheckoutForm() {
 
     <div class="form-row place-order">
 
-        <StripeCheckout name="test" image="test"  billingAddress shippingAddress amount={cart.total * 100} stripeKey="pk_test_51Jwpd7C6QGpCgPGiGbRw9P2udhkT3NYlPMO4jS7PQzdkRW5pV120knLF2SS88JxYzpShVp7k4jg7MsiFHIPEsFTB00GQRlg8D7" token={onToken}/>
 
     </div>
 

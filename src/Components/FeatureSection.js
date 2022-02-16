@@ -10,6 +10,14 @@ import f4 from '../Components/images/f4.png'
 /* image's */
 
 export default function FeatureSection() {
+
+  const TableOfFeatures = [
+    { header: 'Zabawki prosto z chin !' ,desc: 'W chinach często słyszy się o kradzieży dóbr własnych, czy o tym, że John Xina strzela do swoich obywateli' },
+    { header: 'Komiksy i magazyny podróżnicze' ,desc: 'Od lat jako sprzedawcy gazet - pokazujemy innym, że warto...' },
+    { header: 'Elektronika i sprzęt AGD' ,desc: 'Tylko u nas mogą państwo zakupić najnowszy telefon spod znaku GooPhone F1 Ultra' },
+    { header: 'Tanie Chemikalia' ,desc: 'Soczysty rozpuszczalnik, czy uzależniający xanax to u nas chleb powszedni' },
+  ]
+
   return (
       <>
 
@@ -17,103 +25,46 @@ export default function FeatureSection() {
     <div class="container">
       <div class="heading_container">
         <h2>
-          Features Of Our Watches
+          Przede wszystkim stawiamy na jakość i najlepsze ceny
         </h2>
         <p>
-          Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Nasze sklepy są znane z licznych afer, jak dla przykładu ta, kiedy baba z chin se włosy podpaliła na ladzie - płacąc jakimś czereśniakom za silnik do malucha
         </p>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-lg-3">
+        
+        {TableOfFeatures.map((item) => (
+
+          <div class="col-sm-6 col-lg-3">
           <div class="box">
-            <div class="img-box">
-              <img src={f1} alt="" />
+          <div class="img-box">
+    
             </div>
             <div class="detail-box">
-              <h5>
-                Fitness Tracking
+             <h5>
+                {item.header}
               </h5>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+               {item.desc}
               </p>
               <a href="">
-                <span>
-                  Read More
+               <span>
+                Dowiedz się więcej
                 </span>
                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
+             </a>
             </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="box">
-            <div class="img-box">
-              <img src={f2} alt="" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Alerts & Notifications
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="box">
-            <div class="img-box">
-              <img src={f3} alt="" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Messages
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="box">
-            <div class="img-box">
-              <img src={f4} alt="" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Bluetooth
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+
+        ))}
+
       </div>
-      <div class="btn-box">
-        <a href="">
-          View More
-        </a>
-      </div>
+     
+     <button type="button" name="" id="" class="btn btn-primary m-5 w-25 text-uppercase bg-warning border-0 py-2">
+       zobacz więcej
+     </button>
+     
     </div>
   </section>
 

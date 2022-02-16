@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 /* image's */
 
 import sliderimg from '../Components/images/slider-img.png'
+import slider1img from '../Components/images/slider1img.png'
 
 /* image's */
 
@@ -21,7 +22,7 @@ export default function Slider() {
 
   /* slider */
   
-  
+  const [slideShow, setSlideShow] = useState(sliderimg)
 
   const [sliderSlide1, setSliderSlide1] = useState('active')
   const [sliderSlide2, setSliderSlide2] = useState('')
@@ -113,7 +114,7 @@ export default function Slider() {
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src={sliderimg} alt=""/>
+                    <img src={slideShow} alt=""/>
                   </div>
                 </div>
               </div>

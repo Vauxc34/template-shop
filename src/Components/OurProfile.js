@@ -1,8 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux'
 import React, { useState, useEffect } from 'react'
 import { userRequest } from '../RequestMethod'
+import { logout } from '../redux/UserSlice'  
 import axios from 'axios'
 
 const OurProfile = () => {
+
+    const [LogOut, setLogOut] = useState(false)
 
     const SocialMedias = [
         { name: 'facebook' },
@@ -13,15 +17,22 @@ const OurProfile = () => {
 
     const [ ActualUser, setActualUser ] = useState('Gość')
 
+    const dispatch = useDispatch()
+
     useEffect(() => {
 
         const GetUser = async () => {
 
-            try {
+            try {                
 
-                const res = await userRequest.get('https://basic-shop-apii.herokuapp.com/api/users/find/')
+                const res = await userRequest.get('https://basic-shop-apii.herokuapp.com/api/users/find/61fa687cce29a34e7900853a')
                 console.log(res.data)
                 
+                if(user.currentUser.isAdmin == true) {
+                    setActualUser('Administrator')
+                }
+            
+
             } catch {
 
             }
@@ -31,6 +42,22 @@ const OurProfile = () => {
         GetUser()
 
     }, [])
+
+    const HandleLogOut = () => {
+        logout()
+    }
+
+    const user =  useSelector(state => state.user.currentUser)
+
+    
+    /*const HandleLogOut = () => {
+        setLogOut(true)
+        if(!LogOut) {
+
+            user.currentUser(null)
+        } 
+
+    }*/
 
   return (
     (
@@ -61,7 +88,8 @@ const OurProfile = () => {
                 ))}
             </select>
                 
-            <input type="submit" className='mx-4 mt-5 my-4' value="edytuj informacje"/>
+            <input type="submit" className='mx-4 mt-5 my-2' value="edytuj informacje"/>
+            <input type="submit" onClick={HandleLogOut} className='mx-4 mt-0 my-4' value="wyloguj się"/>
             </div>
             </div>
             </div>

@@ -54,7 +54,7 @@ export default function Cart() {
                 <div class="col-md-12">
                     <div class="product-content-right">
                         <div class="woocommerce">
-                            <form method="post" action="#">
+                            
                                 <table cellspacing="0" class="shop_table cart">
                                     <thead>
                                         <tr>
@@ -111,12 +111,14 @@ export default function Cart() {
 
                                         <tr>
                                             <td class="actions" colspan="6">
+                                                <Link to="/checkout">
                                                 <input type="submit" value="Finalizacja zamówienia" name="proceed" className="checkout-button button alt wc-forward m-2"/>
+                                                </Link>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </form>
+                            
 
                             <div class="cart-collaterals">
 

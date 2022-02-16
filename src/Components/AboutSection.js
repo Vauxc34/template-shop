@@ -20,17 +20,15 @@ export default function AboutSection() {
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                About Us
+                Co nie co o nas 🤠
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+            Największe centrum handlowe regionu. Usytuowane jest u zbiegu ulic Mickiewicza i Świętojańskiej, w ścisłym centrum Białegostoku. 
+            Alfa to połączenie tradycji z nowoczesnością. Zabytkowe budynki zostały włączone w nowoczesne wnętrze obiektu.
             </p>
-            <a href="">
-              Read More
+            <a className='text-decoration-none' href="https://google.pl">
+              Dowiedz się więcej
             </a>
           </div>
         </div>
